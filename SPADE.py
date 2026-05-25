@@ -38,7 +38,7 @@ batch_size = args.batch_size
 user_threshold = args.u_thres
 n_samples = args.n_samples
 max_len = 512
-tokenizer = BertTokenizer.from_pretrained("./bert-base-uncased")
+tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
 
 train_conf, adj = pickle.load(
     open('data/adjs/user_t' + str(user_threshold) + '/' + datasetname + '_nn_relations_' + str(n_samples) + '.pkl',
@@ -93,7 +93,7 @@ class NewsDataset(Dataset):
 class BERTPrompt(nn.Module):
     def __init__(self):
         super(BERTPrompt, self).__init__()
-        self.bert = BertForMaskedLM.from_pretrained('./bert-base-uncased')
+        self.bert = BertForMaskedLM.from_pretrained('bert-base-uncased')
         self.softmax = torch.nn.Softmax(dim=-1)
 
     def forward(self, input_ids, masked_position):
@@ -279,7 +279,10 @@ print("Total_Test_Accuracy: {:.4f}|Prec_Macro: {:.4f}|Rec_Macro: {:.4f}|F1_Macro
     sum(test_accs) / iterations, sum(prec_all) / iterations, sum(rec_all) / iterations, sum(f1_all) / iterations))
 
 log_path = f'logs/log_{datasetname}_{args.n_samples}shot_SPADE_t{user_threshold}.iter{iterations}'
-
+log_dir = os.path.dirname(log_path)
+if log_dir: 
+    os.makedirs(log_dir, exist_ok=True)
+    
 with open(log_path, 'a+') as f:
     f.write("-" * 30 + " Experiment Configuration " + "-" * 30 + "\n")
     f.write(f"Method: SPADE (Selective Propagation via Anchor-based Dual-seed Ensemble)\n")
