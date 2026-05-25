@@ -1,7 +1,12 @@
 # SPADE: Selective Propagation via Anchor-based Dual-seed Ensemble
 
-This repository contains the code and data used in the anonymous EMNLP submission "SPADE: Selective Propagation via Anchor-based Dual-seed Ensemble".
+[![Status: Under Review](https://img.shields.io/badge/Status-Under_Review-blue.svg)]()
+[![Task: Few-Shot Fake News Detection](https://img.shields.io/badge/Task-Few--Shot_Fake_News_Detection-brightgreen.svg)]()
 
+> This repository contains the code and processed datasets for the anonymous EMNLP submission: 
+> *"SPADE: Selective Propagation via Anchor-based Dual-seed Ensemble"*.
+> 
+> All identifying information has been removed to preserve anonymity during the review process.
 ## 📂 Project Structure
 
 ```text
@@ -30,7 +35,7 @@ The code has been tested with Python 3.7 and PyTorch 1.8.0 (CUDA 11.1). Experime
 conda create -n spade python=3.7
 conda activate spade
 ```
-2. Install PyTorch compatible with CUDA 11.1::
+2. Install PyTorch compatible with CUDA 11.1:
 
 ```bash
 pip install torch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 -f https://download.pytorch.org/whl/cu111/torch_stable.html
@@ -45,8 +50,8 @@ pip install -r requirements.txt
 ## 📥 Data Preparation
 Due to file size limitations, the preprocessed graph datasets (adjacency matrices and few-shot splits) are provided as a separate compressed file (data.zip).
 
-1. Download the provided `data.zip` file and extract it into the project root directory.
-2. Extract it directly into the project root directory.
+1. Download the provided `data.zip` file.
+2. Extract it into the project root directory.
 
 After extraction, ensure your directory structure matches the following:
 
@@ -74,6 +79,6 @@ python SPADE.py --dataset_name politifact --n_samples 16 --u_thres 5 --n_epochs 
 ## 📝 Notes on Reproducibility
 * **Runtime** : Due to the few-shot setting, the model trains and evaluates very efficiently. Each run typically finishes within a few minutes.
 
-* **Random Seeds** : All experiments are conducted with fixed random seeds for reproducibility. Final results are averaged over multiple runs with different random seeds.
+* **Random Seeds:** All experiments are conducted using predefined random seeds for reproducibility. Final results are averaged over multiple runs.
 
 * **Logging** : The script automatically creates a `logs/` directory during execution to save the evaluation metrics (Accuracy, Precision, Recall, Macro-F1) for each run.
