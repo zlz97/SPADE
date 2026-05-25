@@ -277,7 +277,7 @@ for iter in range(iterations):
 
 print("Total_Test_Accuracy: {:.4f}|Prec_Macro: {:.4f}|Rec_Macro: {:.4f}|F1_Macro: {:.4f}".format(
     sum(test_accs) / iterations, sum(prec_all) / iterations, sum(rec_all) / iterations, sum(f1_all) / iterations))
-
+os.makedirs('logs', exist_ok=True)
 log_path = f'logs/log_{datasetname}_{args.n_samples}shot_SPADE_t{user_threshold}.iter{iterations}'
 
 with open(log_path, 'a+') as f:
