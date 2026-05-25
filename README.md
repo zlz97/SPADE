@@ -3,8 +3,7 @@
 [![Status: Under Review](https://img.shields.io/badge/Status-Under_Review-blue.svg)]()
 [![Task: Few-Shot Fake News Detection](https://img.shields.io/badge/Task-Few--Shot_Fake_News_Detection-brightgreen.svg)]()
 
-> This repository contains the code and processed datasets for the anonymous EMNLP submission: 
-> *"SPADE: Selective Propagation via Anchor-based Dual-seed Ensemble"*.
+> This repository contains the code and processed datasets for the anonymous EMNLP submission introducing the **SPADE** framework.
 > 
 > All identifying information has been removed to preserve anonymity during the review process.
 ## 📂 Project Structure
