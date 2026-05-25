@@ -76,7 +76,7 @@ python SPADE.py --dataset_name politifact --n_samples 16 --u_thres 5 --n_epochs 
 ```
 
 ## 📝 Notes on Reproducibility
-**Runtime:** Due to the few-shot setting, the model trains and evaluates efficiently. A single iteration typically finishes within a few minutes, meaning the full experimental process is completed very quickly.
+* **Runtime:** Due to the few-shot setting, the model trains and evaluates efficiently. A single iteration typically finishes within a few minutes, meaning the full experimental process is completed very quickly.
 
 * **Random Seeds:** All experiments are conducted using predefined random seeds for reproducibility. Final results are averaged over multiple runs.
 
