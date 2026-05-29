@@ -135,7 +135,7 @@ To validate the claims in Appendix A, we provide `stat_test.py` to compare SPADE
 
 > **Interpretation:**
 > * **Significance:** In most cases, SPADE achieves $p < 0.01$, confirming the denoising gains are statistically robust.
-> * **Boundary:** On the extremely sparse FANG graph, the negative $t$-statistic vs. DetectYSF reflects structural limitations discussed in our paper's *Limitations* section.
+> * **Boundary:** On the extremely sparse FANG graph, the negative t-statistic vs. DetectYSF reflects structural limitations discussed in our paper's *Limitations* section.
 
 ## 📝 Notes on Reproducibility
 **Runtime:** Due to the few-shot setting, the model trains and evaluates efficiently. A single iteration typically finishes within a few minutes, meaning the full experimental process is completed very quickly.
