@@ -5,6 +5,14 @@
 
 > This repository contains the code and processed datasets for the anonymous EMNLP submission introducing the **SPADE** framework.
 
+## 🛠️ Framework Overview
+
+<p align="center">
+  <img src="assets/SPADE.png" width="950">
+</p>
+
+> **The SPADE Architecture:** Our framework introduces an anchor-based selection mechanism to identify reliable seed nodes, followed by a selective propagation strategy to mitigate noise and confirmation bias in few-shot fake news detection.
+
 ## 📂 Project Structure
 After extracting data.zip into the root directory, your workspace should be organized as follows. The framework expects this specific structure to locate processed graphs and reference logs.
 ```text
@@ -50,7 +58,7 @@ pip install -r requirements.txt
 ## 📥 Data Preparation
 The preprocessed graph datasets (adjacency matrices and few-shot splits) are provided in `data.zip`. 
 
-1. **Setup**: Download and extract `data.zip` to the root directory.
+1. **Setup**: Download and extract [`data.zip`](./data.zip) to the root directory.
 2. **Dataset Contents**: 
    * **News Articles**: `.csv` files containing article text and ground-truth labels (`0`: Real, `1`: Fake).
    * **Social Context**: Pre-processed `.pkl` files (located in `data/adjs/`) containing the normalized adjacency matrices $\mathbf{A}_{\mathcal{T}}$ constructed from user engagement records.
