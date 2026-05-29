@@ -83,7 +83,7 @@ Alternatively, you can run the Python script manually with customized parameters
 python SPADE.py --dataset_name politifact --n_samples 16 --u_thres 5 --n_epochs 3 --iters 20
 ```
 **Parameter Descriptions:**
-* `--n_samples`: Number of training samples per class in $k$-shot setting.
+* `--n_samples`: Number of training samples per class in k-shot setting.
 * `--u_thres`: Threshold $t_u$ for filtering active social users.
 * `--iters`: Number of independent trials for statistical stability.
 * `--n_epochs`: Training epochs for each trial.
