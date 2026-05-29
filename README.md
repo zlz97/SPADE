@@ -8,7 +8,7 @@
 ## 🛠️ Framework Overview
 
 <p align="center">
-  <img src="assets/SPADE.png" width="950">
+  <img src="assets/SPADE.png" width="1000">
 </p>
 
 > **The SPADE Architecture:** Our framework introduces an anchor-based selection mechanism to identify reliable seed nodes, followed by a selective propagation strategy to mitigate noise and confirmation bias in few-shot fake news detection.
@@ -96,7 +96,7 @@ python stat_test.py
 ## 📊 Experimental Results & Statistical Significance
 As specified in **Appendix A** of our paper, all results are computed across **20 independent trials** to ensure statistical robustness. 
 
-While the main paper focuses on comparative performance across baselines to maintain a focused and concise narrative, we provide the full statistical distribution here to facilitate deeper reproduction analysis and absolute data transparency. The values below denote the **Sample Mean** and the **Unbiased Sample Standard Deviation** ($s$, calculated with **Bessel's Correction**, $ddof=1$).
+While the main paper focuses on comparative performance across baselines to maintain a focused and concise narrative, we provide the full statistical distribution here to facilitate deeper reproduction analysis and absolute data transparency. The values below denote the **Sample Mean** and the **Unbiased Sample Standard Deviation** (s, calculated with **Bessel's Correction**, ddof=1).
 
 <div align="center">
   
