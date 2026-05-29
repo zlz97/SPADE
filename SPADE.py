@@ -274,15 +274,17 @@ for iter in range(iterations):
     prec_all.append(prec)
     rec_all.append(recall)
     f1_all.append(f1)
-
+acc_mean, acc_std = np.mean(test_accs), np.std(test_accs, ddof=1)
+prec_mean = np.mean(prec_all)
+rec_mean = np.mean(rec_all)
+f1_mean = np.mean(f1_all)
 print("Total_Test_Accuracy: {:.4f}|Prec_Macro: {:.4f}|Rec_Macro: {:.4f}|F1_Macro: {:.4f}".format(
     sum(test_accs) / iterations, sum(prec_all) / iterations, sum(rec_all) / iterations, sum(f1_all) / iterations))
 
 log_path = f'logs/log_{datasetname}_{args.n_samples}shot_SPADE_t{user_threshold}.iter{iterations}'
 log_dir = os.path.dirname(log_path)
-if log_dir: 
+if log_dir:
     os.makedirs(log_dir, exist_ok=True)
-    
 with open(log_path, 'a+') as f:
     f.write("-" * 30 + " Experiment Configuration " + "-" * 30 + "\n")
     f.write(f"Method: SPADE (Selective Propagation via Anchor-based Dual-seed Ensemble)\n")
@@ -293,8 +295,8 @@ with open(log_path, 'a+') as f:
     f.write(f"All Accuracies: {test_accs}\n")
 
     f.write("-" * 30 + " Overall Performance " + "-" * 30 + "\n")
-    f.write(f"Average Accuracy:  {sum(test_accs) / iterations:.4f}\n")
-    f.write(f"Average Precision: {sum(prec_all) / iterations:.4f}\n")
-    f.write(f"Average Recall:    {sum(rec_all) / iterations:.4f}\n")
-    f.write(f"Average F1-Macro:  {sum(f1_all) / iterations:.4f}\n")
+    f.write(f"Average Accuracy:  {acc_mean:.4f} ± {acc_std:.4f}\n")
+    f.write(f"Average Precision: {prec_mean:.4f}\n")
+    f.write(f"Average Recall:    {rec_mean:.4f}\n")
+    f.write(f"Average F1-Macro:  {f1_mean:.4f}\n")
     f.write("-" * 85 + "\n\n")
