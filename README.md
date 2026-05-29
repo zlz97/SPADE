@@ -98,6 +98,8 @@ As specified in **Appendix A** of our paper, all results are computed across **2
 
 While the main paper focuses on comparative performance across baselines to maintain a focused and concise narrative, we provide the full statistical distribution here to facilitate deeper reproduction analysis and absolute data transparency. The values below denote the **Sample Mean** and the **Unbiased Sample Standard Deviation** ($s$, calculated with **Bessel's Correction**, $ddof=1$).
 
+<div align="center">
+  
 | Dataset | Setting | Accuracy (Mean ± Std) | Precision (Macro) | Recall (Macro) | F1-Macro |
 | :--- | :--- | :--- | :---: | :---: | :---: |
 |  **PolitiFact** | 16-shot | 0.8695 ± 0.0044 | 0.8700 | 0.8695 | 0.8695 |
@@ -113,11 +115,14 @@ While the main paper focuses on comparative performance across baselines to main
 | | 64-shot | 0.6511 ± 0.0134 | 0.6527 | 0.6511 | 0.6502 |
 | | 128-shot | 0.6619 ± 0.0125 | 0.6636 | 0.6619 | 0.6610 |
 
+</div>
 
 > **Verification:** The full execution logs for these runs are available in the [`logs/logs_our`](./logs/logs_our/) directory.
 
 ### 🔬 Statistical Significance (16-shot)
 To validate the claims in Appendix A, we provide `stat_test.py` to compare SPADE against two key baselines. The following table summarizes the **T-statistic** and **P-value** derived from our 20-trial execution logs.
+
+<div align="center">
 
 | Comparison Target | Metric | PolitiFact | GossipCop | FANG (Sparse) |
 | :--- | :--- | :---: | :---: | :---: |
@@ -125,6 +130,8 @@ To validate the claims in Appendix A, we provide `stat_test.py` to compare SPADE
 | (Paired t-test) | *p-value* | **1.08e-3** ✅ | **3.37e-7** ✅ | **2.22e-2** ✅ |
 | **vs. DetectYSF** | *t-stat* | 4.62 | 75.02 | -9.04 |
 | (One-sample) | *p-value* | **1.89e-4** ✅ | **5.80e-25** ✅ | 2.60e-8 (Trails) |
+
+</div>
 
 > **Interpretation:**
 > * **Significance:** In most cases, SPADE achieves $p < 0.01$, confirming the denoising gains are statistically robust.
